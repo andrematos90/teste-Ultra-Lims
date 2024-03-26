@@ -1,0 +1,61 @@
+footer{
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  background-color: rgb(22, 33, 62);
+  color: white;
+  width: 97,5vw;
+
+}
+
+.footer-contacts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+
+
+app-icon:hover{
+  fill: white; /* Cor ao passar o mouse (branco) */
+
+}
+
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.redes{
+  display: flex;
+  flex-direction: row;
+}
+
+.insta-contact{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+.git-contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  text-align: center;
+}
+
+
+
+.linkedin-contact{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  justify-content: center;
+  text-align: center;
+}
