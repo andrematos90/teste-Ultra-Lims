@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from './components/footer/footer.component';
-import { IconModule } from './icon/icon.module'
+import { IconModule } from './icon/icon.module';
+import { PageComponent } from './components/page/page.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,
