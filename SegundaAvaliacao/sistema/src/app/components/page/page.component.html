@@ -12,10 +12,20 @@
 
   <!-- Seção de resultado da consulta -->
   <h2>Resultado da Consulta:</h2>
-  <div id="addressDetails" *ngIf="address && !cepNotFound"> <!-- Verificando se o endereço existe e se o CEP não foi encontrado -->
+  <div id="addressDetails" *ngIf="address">
     <ul>
-      <!-- Detalhes do endereço -->
-    </ul>
+      <li><strong>CEP:</strong>{{address.cep}}</li>
+      <li><strong>Logradouro:</strong> {{address.logradouro}}</li>
+      <li><strong>Complemento:</strong> {{address.complemento}}</li>
+      <li><strong>Bairro:</strong> {{address.bairro}}</li>
+      <li><strong>Localidade:</strong> {{address.localidade}}</li>
+      <li><strong>UF:</strong> {{address.uf}}</li>
+      <li><strong>IBGE:</strong> {{address.ibge}}</li>
+      <li><strong>GIA:</strong> {{address.gia}}</li>
+      <li><strong>DDD:</strong> {{address.ddd}}</li>
+      <li><strong>SIAFI:</strong> {{address.siafi}}</li>
+  </ul>
+
   </div>
 
   <!-- Seção de histórico de consultas -->

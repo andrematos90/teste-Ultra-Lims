@@ -11,8 +11,8 @@ table {
 }
 
 th, td {
-  width: 25%; /* Define cada célula como um quadrado */
+  width: 25%;
   padding: 10px;
   text-align: center;
-  border: 1px solid #ccc; /* Adiciona uma borda fina em cada célula */
+  border: 1px solid #ccc;
 }
