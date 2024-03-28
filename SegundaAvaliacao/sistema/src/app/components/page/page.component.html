@@ -1,11 +1,12 @@
 <div class="container">
-
-    <h1>Consulta de Endereço por CEP</h1>
-    <div id="searchForm">
-        <label for="cepInput">Digite o CEP:</label>
-        <input type="text" id="cepInput"  placeholder="Digite o CEP" [(ngModel)]="cepEnviado">
-        <button (click)="getAddress()">Consultar</button>
-    </div>
+  <h1>Consulta de Endereço por CEP</h1>
+  <div id="searchForm">
+      <label for="cepInput">Digite o CEP:</label>
+      <input type="text" id="cepInput" placeholder="Digite o CEP" [(ngModel)]="cepEnviado"
+          [ngClass]="{'invalid-cep': !cepValido}">
+      <button (click)="getAddress()">Consultar</button>
+      <p *ngIf="!cepValido" class="error-message">O CEP deve conter 8 dígitos numéricos.</p>
+  </div>
     <div id="addressDetails" *ngIf="address">
       <ul>
         <li><strong>CEP:</strong>{{address.cep}}</li>

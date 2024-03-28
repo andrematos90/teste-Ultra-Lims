@@ -55,3 +55,10 @@ button{
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
+.error-message{
+  color: red;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}

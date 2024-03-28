@@ -12,7 +12,6 @@ export class SearchCepService {
   constructor(private http: HttpClient) { }
 
   getAddressService(cep: string): Observable<any> {
-    console.log("chegou no service")
     return this.http.get(`${this.apiUrl}/${cep}/json`);
   }
 }

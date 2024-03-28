@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { SearchCepService } from '../../services/search-cep.service'
 
-
 @Component({
   selector: 'app-page',
   templateUrl: './page.component.html',
@@ -10,17 +9,20 @@ import { SearchCepService } from '../../services/search-cep.service'
 export class PageComponent {
   cepEnviado: string = '';
   address: any;
+  cepValido: boolean = true;
 
   constructor(private searchCepService : SearchCepService) {}
 
   getAddress() {
-    console.log("chegou")
-    if (this.cepEnviado.length === 8) {
+
+    if (this.cepEnviado.length === 8 && /^\d+$/.test(this.cepEnviado)) {
+      this.cepValido = true;
       this.searchCepService.getAddressService(this.cepEnviado)
         .subscribe((data) => {
           this.address = data;
-          console.log(this.address)
         });
+    } else {
+      this.cepValido = false;
     }
   }
 }
