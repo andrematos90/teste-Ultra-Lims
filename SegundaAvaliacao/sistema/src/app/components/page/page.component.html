@@ -1,30 +1,31 @@
 <div class="container">
   <h1>Consulta de Endereço por CEP</h1>
   <div id="searchForm">
-      <label for="cepInput">Digite o CEP:</label>
-      <input type="text" id="cepInput" placeholder="Digite o CEP" [(ngModel)]="cepEnviado"
-          [ngClass]="{'invalid-cep': !cepValido}">
-      <button (click)="getAddress()">Consultar</button>
-      <p *ngIf="!cepValido" class="error-message">O CEP deve conter 8 dígitos numéricos.</p>
+    <label for="cepInput">Digite o CEP:</label>
+    <input type="text" id="cepInput" placeholder="Digite o CEP" [(ngModel)]="cepSent"
+      [ngClass]="{'invalid-cep': !cepValid}">
+    <button (click)="getAddress()">Consultar</button>
+    <p *ngIf="!cepValid" class="error-message">O CEP deve conter 8 dígitos numéricos.</p>
   </div>
-    <div id="addressDetails" *ngIf="address">
-      <ul>
-        <li><strong>CEP:</strong>{{address.cep}}</li>
-        <li><strong>Logradouro:</strong> {{address.logradouro}}</li>
-        <li><strong>Complemento:</strong> {{address.complemento}}</li>
-        <li><strong>Bairro:</strong> {{address.bairro}}</li>
-        <li><strong>Localidade:</strong> {{address.localidade}}</li>
-        <li><strong>UF:</strong> {{address.uf}}</li>
-        <li><strong>IBGE:</strong> {{address.ibge}}</li>
-        <li><strong>GIA:</strong> {{address.gia}}</li>
-        <li><strong>DDD:</strong> {{address.ddd}}</li>
-        <li><strong>SIAFI:</strong> {{address.siafi}}</li>
+
+  <h2>Resultado da Consulta:</h2>
+  <div id="addressDetails" *ngIf="address">
+    <ul>
+      <li><strong>CEP:</strong>{{address.cep}}</li>
+      <li><strong>Logradouro:</strong> {{address.logradouro}}</li>
+      <li><strong>Complemento:</strong> {{address.complemento}}</li>
+      <li><strong>Bairro:</strong> {{address.bairro}}</li>
+      <li><strong>Localidade:</strong> {{address.localidade}}</li>
+      <li><strong>UF:</strong> {{address.uf}}</li>
+      <li><strong>IBGE:</strong> {{address.ibge}}</li>
+      <li><strong>GIA:</strong> {{address.gia}}</li>
+      <li><strong>DDD:</strong> {{address.ddd}}</li>
+      <li><strong>SIAFI:</strong> {{address.siafi}}</li>
     </ul>
 
-    </div>
-    <div id="storedAddresses">
-        <!-- Aqui serão exibidos os endereços armazenados -->
-    </div>
-
+  </div>
+  <div id="storedAddresses" *ngIf="show">
+    <app-history [results]="previousAppointments"></app-history>
+  </div>
 
 </div>

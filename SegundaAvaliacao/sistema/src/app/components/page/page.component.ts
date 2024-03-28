@@ -7,22 +7,31 @@ import { SearchCepService } from '../../services/search-cep.service'
   styleUrls: ['./page.component.css']
 })
 export class PageComponent {
-  cepEnviado: string = '';
+  cepSent: string = '';
   address: any;
-  cepValido: boolean = true;
+  cepValid: boolean = true;
+  previousAppointments: any[] = [];
+  show:boolean = true;
 
-  constructor(private searchCepService : SearchCepService) {}
+
+  constructor(private searchCepService : SearchCepService) {
+
+  }
+
 
   getAddress() {
 
-    if (this.cepEnviado.length === 8 && /^\d+$/.test(this.cepEnviado)) {
-      this.cepValido = true;
-      this.searchCepService.getAddressService(this.cepEnviado)
+    if (this.cepSent.length === 8 && /^\d+$/.test(this.cepSent)) {
+      this.cepValid = true;
+      this.searchCepService.getAddressService(this.cepSent)
         .subscribe((data) => {
           this.address = data;
+          this.previousAppointments.push(data);
+
         });
     } else {
-      this.cepValido = false;
+      this.cepValid = false;
     }
   }
+
 }
