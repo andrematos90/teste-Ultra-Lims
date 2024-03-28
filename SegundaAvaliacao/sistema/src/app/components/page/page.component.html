@@ -3,21 +3,21 @@
     <h1>Consulta de Endereço por CEP</h1>
     <div id="searchForm">
         <label for="cepInput">Digite o CEP:</label>
-        <input type="text" id="cepInput" placeholder="Digite o CEP">
-        <button onclick="searchAddress()">Consultar</button>
+        <input type="text" id="cepInput"  placeholder="Digite o CEP" [(ngModel)]="cepEnviado">
+        <button (click)="getAddress()">Consultar</button>
     </div>
-    <div id="addressDetails">
+    <div id="addressDetails" *ngIf="address">
       <ul>
-        <li><strong>CEP:</strong> 01001-000</li>
-        <li><strong>Logradouro:</strong> Praça da Sé</li>
-        <li><strong>Complemento:</strong> lado ímpar</li>
-        <li><strong>Bairro:</strong> Sé</li>
-        <li><strong>Localidade:</strong> São Paulo</li>
-        <li><strong>UF:</strong> SP</li>
-        <li><strong>IBGE:</strong> 3550308</li>
-        <li><strong>GIA:</strong> 1004</li>
-        <li><strong>DDD:</strong> 11</li>
-        <li><strong>SIAFI:</strong> 7107</li>
+        <li><strong>CEP:</strong>{{address.cep}}</li>
+        <li><strong>Logradouro:</strong> {{address.logradouro}}</li>
+        <li><strong>Complemento:</strong> {{address.complemento}}</li>
+        <li><strong>Bairro:</strong> {{address.bairro}}</li>
+        <li><strong>Localidade:</strong> {{address.localidade}}</li>
+        <li><strong>UF:</strong> {{address.uf}}</li>
+        <li><strong>IBGE:</strong> {{address.ibge}}</li>
+        <li><strong>GIA:</strong> {{address.gia}}</li>
+        <li><strong>DDD:</strong> {{address.ddd}}</li>
+        <li><strong>SIAFI:</strong> {{address.siafi}}</li>
     </ul>
 
     </div>

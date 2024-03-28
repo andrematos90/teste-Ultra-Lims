@@ -7,7 +7,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from './components/footer/footer.component';
 import { IconModule } from './icon/icon.module';
-import { PageComponent } from './components/page/page.component'
+import { PageComponent } from './components/page/page.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { PageComponent } from './components/page/page.component'
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
-    IconModule
+    IconModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
