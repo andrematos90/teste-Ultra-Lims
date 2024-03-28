@@ -1,7 +1,18 @@
 <div class="container">
   <h2>Histórico de Consultas:</h2>
-  <ul>
-    <li *ngFor="let resultado of results">{{ resultado.cep }}, {{ resultado.localidade }}/{{resultado.bairro}} - {{ resultado.uf }}</li>
-  </ul>
 
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="cep">CEP</th>
+      <th mat-sort-header="localidade">Localidade</th>
+      <th mat-sort-header="bairro">Bairro</th>
+      <th mat-sort-header="uf">UF</th>
+    </tr>
+    <tr *ngFor="let resultado of sortedResults">
+      <td>{{ resultado.cep }}</td>
+      <td>{{ resultado.localidade }}</td>
+      <td>{{ resultado.bairro }}</td>
+      <td>{{ resultado.uf }}</td>
+    </tr>
+  </table>
 </div>

@@ -1,4 +1,5 @@
 <div class="container">
+  <!-- Seção de consulta de endereço -->
   <h1>Consulta de Endereço por CEP</h1>
   <div id="searchForm">
     <label for="cepInput">Digite o CEP:</label>
@@ -6,26 +7,19 @@
       [ngClass]="{'invalid-cep': !cepValid}">
     <button (click)="getAddress()">Consultar</button>
     <p *ngIf="!cepValid" class="error-message">O CEP deve conter 8 dígitos numéricos.</p>
+    <p *ngIf="cepNotFound" class="error-message">O CEP informado não existe.</p> <!-- Nova mensagem para CEP não encontrado -->
   </div>
 
+  <!-- Seção de resultado da consulta -->
   <h2>Resultado da Consulta:</h2>
-  <div id="addressDetails" *ngIf="address">
+  <div id="addressDetails" *ngIf="address && !cepNotFound"> <!-- Verificando se o endereço existe e se o CEP não foi encontrado -->
     <ul>
-      <li><strong>CEP:</strong>{{address.cep}}</li>
-      <li><strong>Logradouro:</strong> {{address.logradouro}}</li>
-      <li><strong>Complemento:</strong> {{address.complemento}}</li>
-      <li><strong>Bairro:</strong> {{address.bairro}}</li>
-      <li><strong>Localidade:</strong> {{address.localidade}}</li>
-      <li><strong>UF:</strong> {{address.uf}}</li>
-      <li><strong>IBGE:</strong> {{address.ibge}}</li>
-      <li><strong>GIA:</strong> {{address.gia}}</li>
-      <li><strong>DDD:</strong> {{address.ddd}}</li>
-      <li><strong>SIAFI:</strong> {{address.siafi}}</li>
+      <!-- Detalhes do endereço -->
     </ul>
-
   </div>
+
+  <!-- Seção de histórico de consultas -->
   <div id="storedAddresses" *ngIf="show">
     <app-history [results]="previousAppointments"></app-history>
   </div>
-
 </div>

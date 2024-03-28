@@ -1,4 +1,18 @@
-.container{
+.container {
   width: 100%;
-  height: 100vh;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgb(22, 33, 62);
+  color: white;
+}
+
+th, td {
+  width: 25%; /* Define cada célula como um quadrado */
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc; /* Adiciona uma borda fina em cada célula */
 }
